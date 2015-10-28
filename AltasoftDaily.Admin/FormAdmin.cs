@@ -111,6 +111,9 @@ namespace AltasoftDaily.Admin
             SelectedUser.CanViewDaily = cbxCanViewDaily.Checked;
             SelectedUser.IsLockedOut = cbxBlockedOut.Checked;
 
+            SelectedUser.Filter.IsDeptFilterEnabled = cbxDeptFilter.Checked;
+            SelectedUser.Filter.IsOperatorFilterEnabled = cbxOperatorFilter.Checked;
+
             Db.SaveChanges();
         }
 
@@ -136,6 +139,13 @@ namespace AltasoftDaily.Admin
             for (int i = 0; i < clbVisibleUsers.Items.Count; i++)
                 clbVisibleUsers.SetItemCheckState(i, CheckState.Unchecked);
 
+            
+            foreach (var item in Db.Users.Where(x => x.Filter == null).ToList())
+            {
+                item.Filter = new Filter() { FilterData = new List<FilterData>() };
+                Db.SaveChanges();
+            }
+
             foreach (var u in SelectedUser.Filter.FilterData.Where(x => x.OperatorID > 0))
             {
                 var user = Db.Users.FirstOrDefault(x => x.AltasoftUserID == u.OperatorID);
@@ -152,7 +162,12 @@ namespace AltasoftDaily.Admin
             foreach (var d in SelectedUser.Filter.FilterData.Where(x => x.DeptID > 0))
             {
                 clbDepts.SetItemChecked(d.DeptID, true);
-            } 
+            }
+            #endregion
+
+            #region Set Filter States
+            cbxDeptFilter.Checked = SelectedUser.Filter.IsDeptFilterEnabled;
+            cbxOperatorFilter.Checked = SelectedUser.Filter.IsOperatorFilterEnabled;
             #endregion
         }
     }

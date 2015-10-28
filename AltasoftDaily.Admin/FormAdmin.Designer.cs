@@ -42,11 +42,15 @@
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.clbDepts = new System.Windows.Forms.CheckedListBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cbxDeptFilter = new System.Windows.Forms.CheckBox();
+            this.cbxOperatorFilter = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -54,6 +58,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -81,6 +86,10 @@
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel3);
             // 
             // splitContainer2.Panel2
             // 
@@ -221,6 +230,36 @@
             this.clbDepts.Size = new System.Drawing.Size(214, 93);
             this.clbDepts.TabIndex = 0;
             // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.cbxDeptFilter);
+            this.flowLayoutPanel3.Controls.Add(this.cbxOperatorFilter);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(168, 62);
+            this.flowLayoutPanel3.TabIndex = 0;
+            // 
+            // cbxDeptFilter
+            // 
+            this.cbxDeptFilter.AutoSize = true;
+            this.cbxDeptFilter.Location = new System.Drawing.Point(3, 3);
+            this.cbxDeptFilter.Name = "cbxDeptFilter";
+            this.cbxDeptFilter.Size = new System.Drawing.Size(144, 17);
+            this.cbxDeptFilter.TabIndex = 0;
+            this.cbxDeptFilter.Text = "ფილიალის ფილტრი";
+            this.cbxDeptFilter.UseVisualStyleBackColor = true;
+            // 
+            // cbxOperatorFilter
+            // 
+            this.cbxOperatorFilter.AutoSize = true;
+            this.cbxOperatorFilter.Location = new System.Drawing.Point(3, 26);
+            this.cbxOperatorFilter.Name = "cbxOperatorFilter";
+            this.cbxOperatorFilter.Size = new System.Drawing.Size(150, 17);
+            this.cbxOperatorFilter.TabIndex = 0;
+            this.cbxOperatorFilter.Text = "ოპერატორის ფილტრი";
+            this.cbxOperatorFilter.UseVisualStyleBackColor = true;
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +272,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
@@ -242,6 +282,8 @@
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,5 +304,8 @@
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckedListBox clbDepts;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.CheckBox cbxDeptFilter;
+        private System.Windows.Forms.CheckBox cbxOperatorFilter;
     }
 }
